@@ -21,8 +21,8 @@ Data type
    data_type/dtype.rst
    data_type/astype.rst
    data_type/dtype_bits.rst
-   data_type/as_ivy_dtype.rst
-   data_type/as_native_dtype.rst
+   data_type/dtype_to_str.rst
+   data_type/dtype_from_str.rst
    data_type/default_int_dtype.rst
    data_type/default_float_dtype.rst
    data_type/default_dtype.rst
@@ -38,10 +38,7 @@ Data type
    data_type/result_type.rst
    data_type/valid_dtype.rst
    data_type/invalid_dtype.rst
-   data_type/function_supported_dtypes.rst
-   data_type/function_unsupported_dtypes.rst
-   data_type/promote_types.rst
-   data_type/type_promote_arrays.rst
+   data_type/convert_dtype.rst
    data_type/DefaultDtype:
     """"""
 

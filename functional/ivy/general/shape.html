@@ -47,8 +47,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../extensions.html">Extensions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../roadmap.html">Roadmap</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../contributing.html">Contributing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../deep_dive.html">Deep Dive</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../faq.html">FAQ</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Functions</span></p>
 <ul class="current">
@@ -86,7 +84,7 @@
 <li class="toctree-l2"><a class="reference internal" href="arg_names.html">arg_names</a></li>
 <li class="toctree-l2"><a class="reference internal" href="match_kwargs.html">match_kwargs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cache_fn.html">cache_fn</a></li>
-<li class="toctree-l2"><a class="reference internal" href="current_backend_str.html">current_backend_str</a></li>
+<li class="toctree-l2"><a class="reference internal" href="current_framework_str.html">current_framework_str</a></li>
 <li class="toctree-l2"><a class="reference internal" href="einops_rearrange.html">einops_rearrange</a></li>
 <li class="toctree-l2"><a class="reference internal" href="einops_reduce.html">einops_reduce</a></li>
 <li class="toctree-l2"><a class="reference internal" href="einops_repeat.html">einops_repeat</a></li>
@@ -122,10 +120,10 @@
 <li class="toctree-l2"><a class="reference internal" href="one_hot.html">one_hot</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">shape</a></li>
 <li class="toctree-l2"><a class="reference internal" href="get_num_dims.html">get_num_dims</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arg_info.html">arg_info</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../gradients.html">Gradients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../image.html">Image</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../layers.html">Layers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../linear_algebra.html">Linear algebra</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../losses.html">Losses</a></li>
@@ -194,7 +192,7 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="ivy.functional.ivy.general.shape">
 <span class="sig-prename descclassname">ivy.</span></span><span class="sig-name descname"><span class="pre">shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">as_array</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ivy/functional/ivy/general.html#shape"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.functional.ivy.general.shape" title="Permalink to this definition"></a></dt>
-<dd><p>Returns the shape of the array <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
+<dd><p>Returns the shape of the array x.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -206,22 +204,9 @@
 <dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Iterable</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]</p>
 </dd>
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>ret</em> – Shape of the array <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
+<dd class="field-odd"><p><em>ret</em> – Shape of the array</p>
 </dd>
 </dl>
-<p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">set_backend</span><span class="p">(</span><span class="s1">&#39;torch&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">z</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">as_array</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-<span class="go">torch.Size([2, 3])</span>
-</pre></div>
-</div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
-<span class="go">ivy.array([2, 3])</span>
-</pre></div>
-</div>
 </dd></dl>
 
 <div class="line-block">
