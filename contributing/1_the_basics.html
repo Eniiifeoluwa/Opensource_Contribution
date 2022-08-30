@@ -52,11 +52,6 @@
 <li class="toctree-l3"><a class="reference internal" href="#getting-help">Getting Help</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#todo-list-issues">ToDo List Issues</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#managing-your-fork">Managing Your Fork</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#who-to-ask">Who To Ask</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#with-command-line">With Command Line:</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#with-browser">With Browser:</a></li>
-</ul>
-</li>
 <li class="toctree-l3"><a class="reference internal" href="#pull-requests">Pull Requests</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#small-commits-often">Small Commits Often</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#running-tests-locally">Running Tests Locally</a><ul>
@@ -75,6 +70,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Functions</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../functional/frontends.html">Frontends</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../functional/ivy/activations.html">Activations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../functional/ivy/compilation.html">Compilation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../functional/ivy/constants.html">Constants</a></li>
@@ -84,6 +80,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../functional/ivy/elementwise.html">Elementwise</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../functional/ivy/general.html">General</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../functional/ivy/gradients.html">Gradients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functional/ivy/image.html">Image</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../functional/ivy/layers.html">Layers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../functional/ivy/linear_algebra.html">Linear algebra</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../functional/ivy/losses.html">Losses</a></li>
@@ -98,21 +95,16 @@
 <li class="toctree-l1"><a class="reference internal" href="../functional/ivy/statistical.html">Statistical</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../functional/ivy/utility.html">Utility</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Data Classes</span></p>
+<p class="caption" role="heading"><span class="caption-text">Stateful</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../data_classes/container.html">Container</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../data_classes/array.html">Array</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Framework Classes</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../stateful/initializers.html">Initializers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../stateful/layers.html">Layers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../stateful/sequential.html">Sequential</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../stateful/norms.html">Norms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../stateful/optimizers.html">Optimizers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../stateful/activations.html">Activations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../stateful/converters.html">Converters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stateful/initializers.html">Initializers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stateful/layers.html">Layers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../stateful/module.html">Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stateful/norms.html">Norms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stateful/optimizers.html">Optimizers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stateful/sequential.html">Sequential</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Docs</span></p>
 <ul>
@@ -279,41 +271,6 @@ src="https://www.youtube.com/embed/TFMPihytg9U" class="video">
 <p>For questions, please reach out on the <a class="reference external" href="https://github.com/unifyai/ivy/discussions/1309">contributing discussion</a>
 or on <a class="reference external" href="https://discord.gg/ZVQdvbzNQJ">discord</a> in the <a class="reference external" href="https://discord.com/channels/799879767196958751/982728689408167956">fork management channel</a>!</p>
 </section>
-<section id="who-to-ask">
-<h2>Who To Ask<a class="headerlink" href="#who-to-ask" title="Permalink to this heading"></a></h2>
-<p>When raising issues or starting discussions on the Ivy repo,
-it can be useful to know who in the team wrote which piece of code.
-Armed with this information, you can then for example directly tag (usuing &#64;)
-the member of the team who worked on a particular piece of code,
-which you are trying to understand, or you would like to ask questions about.</p>
-<p>Here we describe a workflow to help navigate this question of “who to ask”.</p>
-<section id="with-command-line">
-<h3>With Command Line:<a class="headerlink" href="#with-command-line" title="Permalink to this heading"></a></h3>
-<p><strong>git blame</strong> - Show what revision and author last modified each line of a file</p>
-<p><strong>git log</strong>   - Show commit logs</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># Eg: From line 16 to next 5 lines since past 2 weeks
-git blame --since=2.weeks -L 16,+5 &lt;filepath&gt; | grep -v &quot;^\^&quot;
-# Deeper look at what each author changed in files retrieved from the above step
-git log &lt;commit_id&gt; -p
-</pre></div>
-</div>
-</section>
-<section id="with-browser">
-<h3>With Browser:<a class="headerlink" href="#with-browser" title="Permalink to this heading"></a></h3>
-<p><strong>Git Blame View</strong> is a handy tool to view the line-by-line revision history for an entire file,
-or view the revision history of a single line within a file.</p>
-<a class="reference internal image-reference" href="../_images/git_blame_.png"><img alt="../_images/git_blame_.png" src="../_images/git_blame_.png" style="width: 420px;" /></a>
-<p>This view can be toggled from the option in left vertical pane,
-or from the “blame” icon in top-right, as highlighted above.</p>
-<a class="reference internal image-reference" href="../_images/git_blame_.png"><img alt="../_images/git_blame_.png" src="../_images/git_blame_.png" style="width: 420px;" /></a>
-<p>Each time you click the highlighted icon, the previous revision information
-for that line is shown, including who committed the change and when this happened.</p>
-<a class="reference internal image-reference" href="../_images/git_blame_.png"><img alt="../_images/git_blame_.png" src="../_images/git_blame_.png" style="width: 420px;" /></a>
-<p>Whenever starting a discussion or creating an issue, you are very welcome to tag
-members of the Ivy team using “&#64;”, selecting the person you think would most suitable
-to interact with, based on the information gained from the above steps.</p>
-</section>
-</section>
 <section id="pull-requests">
 <h2>Pull Requests<a class="headerlink" href="#pull-requests" title="Permalink to this heading"></a></h2>
 <p>Our process for responding to pull requests is quite simple.
@@ -411,17 +368,9 @@ or on <a class="reference external" href="https://discord.gg/ZVQdvbzNQJ">discord
 </li>
 <li><dl>
 <dt>Through the command line (With docker):</dt><dd><ol class="arabic">
-<li><p>We need to replace the folder inside the container with the current local ivy directory to run tests on the current local code.</p>
+<li><p>We need to first enter inside the docker container and change into the <code class="code docutils literal notranslate"><span class="pre">ivy</span></code> directory using the following command.</p>
 <blockquote>
-<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>docker exec &lt;container-name&gt; rm -rf ivy
-docker cp ivy &lt;container-name&gt;:/
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-<li><p>We need to then enter inside the docker container and change into the <code class="code docutils literal notranslate"><span class="pre">ivy</span></code> directory using the following command.</p>
-<blockquote>
-<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>docker exec -it ivy_container bash
+<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>docker run --rm -it --entrypoint bash unifyai/ivy
 cd ivy
 </pre></div>
 </div>
@@ -580,30 +529,6 @@ cd ivy
 </dd>
 </dl>
 </li>
-<li><dl class="simple">
-<dt>Optional Flags: Various optional flags are available for running the tests such as <code class="code docutils literal notranslate"><span class="pre">device</span></code>, <code class="code docutils literal notranslate"><span class="pre">backend</span></code>, etc.</dt><dd><ol class="arabic simple">
-<li><dl class="simple">
-<dt><code class="code docutils literal notranslate"><span class="pre">device</span></code>:</dt><dd><ol class="arabic simple">
-<li><p>This flag enables setting of the device where the tests would be run.</p></li>
-<li><p>Possible values being <code class="code docutils literal notranslate"><span class="pre">cpu</span></code> and <code class="code docutils literal notranslate"><span class="pre">gpu</span></code>.</p></li>
-<li><p>Default value is <code class="code docutils literal notranslate"><span class="pre">cpu</span></code></p></li>
-</ol>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt><code class="code docutils literal notranslate"><span class="pre">backend</span></code>:</dt><dd><ol class="arabic simple">
-<li><p>This flag enables running the tests for particular backends.</p></li>
-<li><p>The values of this flag could be any possible combination of <code class="code docutils literal notranslate"><span class="pre">jax</span></code>, <code class="code docutils literal notranslate"><span class="pre">numpy</span></code>, <code class="code docutils literal notranslate"><span class="pre">tensorflow</span></code> and <code class="code docutils literal notranslate"><span class="pre">torch</span></code>.</p></li>
-<li><p>Default value is <code class="code docutils literal notranslate"><span class="pre">jax,numpy,tensorflow,torch</span></code>.</p></li>
-</ol>
-</dd>
-</dl>
-</li>
-</ol>
-</dd>
-</dl>
-</li>
 </ol>
 <p><strong>Round Up</strong></p>
 <p>This should have hopefully given you a good understanding of the basics for contributing.</p>
@@ -627,7 +552,7 @@ or <a class="reference external" href="https://discord.com/channels/799879767196
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2020, Ivy Team.</p>
+    <p>&#169; Copyright 2020-2022, Ivy Team.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
