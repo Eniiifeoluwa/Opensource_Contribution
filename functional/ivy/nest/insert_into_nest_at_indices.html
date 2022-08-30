@@ -47,6 +47,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../extensions.html">Extensions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../roadmap.html">Roadmap</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../deep_dive.html">Deep Dive</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../faq.html">FAQ</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Functions</span></p>
 <ul class="current">
@@ -59,7 +61,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../elementwise.html">Elementwise</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../general.html">General</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../gradients.html">Gradients</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../image.html">Image</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../layers.html">Layers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../linear_algebra.html">Linear algebra</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../losses.html">Losses</a></li>
@@ -82,6 +83,7 @@
 <li class="toctree-l2"><a class="reference internal" href="nested_map.html">nested_map</a></li>
 <li class="toctree-l2"><a class="reference internal" href="nested_any.html">nested_any</a></li>
 <li class="toctree-l2"><a class="reference internal" href="copy_nest.html">copy_nest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nested_multi_map.html">nested_multi_map</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../norms.html">Norms</a></li>
@@ -150,15 +152,13 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>nest</strong> (<em>nested</em>) – The nested object to insert into.</p></li>
-<li><p><strong>indices</strong> – A tuple of tuples of indices for the indices at which to insert</p></li>
+<li><p><strong>nest</strong> – The nested object to insert into.</p></li>
+<li><p><strong>indices</strong> – A tuple of tuples of indices for the indices at which to insert
+values.</p></li>
+<li><p><strong>values</strong> – The new values for inserting.</p></li>
 </ul>
 </dd>
 </dl>
-<p>values.
-:type indices: tuple of tuples of indices
-:param values: The new values for inserting.
-:type values: sequence of any</p>
 </dd></dl>
 
 <div class="line-block">
